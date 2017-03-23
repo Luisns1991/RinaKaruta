@@ -25,41 +25,22 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jScrollPane1" alignment="0" pref="262" max="32767" attributes="0"/>
+          <Component id="lblPuntos" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jScrollPane1" alignment="0" pref="285" max="32767" attributes="0"/>
+          <Component id="lblPuntos" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
-      <AuxValues>
-        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-      </AuxValues>
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-      <SubComponents>
-        <Component class="javax.swing.JTextArea" name="jTextArea1">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
-            </Property>
-            <Property name="columns" type="int" value="20"/>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Monospaced" size="14" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="33" green="33" red="0" type="rgb"/>
-            </Property>
-            <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="&#xa;Ica&#x9;&#x9;350PTS&#xa;&#xa;Arequipa&#x9;500PTS&#xa;&#xa;Nazca&#x9;&#x9;700PTS&#xa;&#xa;Chachapoyas&#x9;900PTS&#xa;&#xa;Iquitos&#x9;&#x9;1200PTS&#xa;&#xa;Cuzco&#x9;&#x9;1500PTS"/>
-          </Properties>
-        </Component>
-      </SubComponents>
-    </Container>
+    <Component class="javax.swing.JLabel" name="lblPuntos">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ventanas/puntos1.jpg"/>
+        </Property>
+      </Properties>
+    </Component>
   </SubComponents>
 </Form>

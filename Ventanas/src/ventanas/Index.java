@@ -1,9 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+//Grupo
 package ventanas;
+
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,6 +14,8 @@ public class Index extends javax.swing.JFrame {
      */
     public Index() {
         initComponents();
+        
+        //Con este código la ventana aparece en el centro de la pantalla al ser inicializada
         this.setLocationRelativeTo(this);
     }
 
@@ -88,15 +88,23 @@ public class Index extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        // TODO add your handling code here:
+
+        //Se crea un objeto llamado registro para poder manipular la ventana Registro
+        Registro registro = new Registro();
         
-        Registro Registro = new Registro();
-        Registro.setVisible(true);
+        //Se inicializa la ventana Registro
+        registro.setVisible(true);
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnPuntosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPuntosActionPerformed
-        // TODO add your handling code here:
+        //Se muestra una ventana predeterminada mostrando el mensaje: "Acumula puntos ...."
+        JOptionPane.showMessageDialog(null, "Acumula puntos y gana viajes gratis de hasta 1,500 S/.\n"
+                + "\t\tConoce esta increíble promoción. ","PUNTOS", JOptionPane.PLAIN_MESSAGE);
+
+        //Se crea un objeto llamado punto para poder manipular la ventana ViajeConPuntos
         ViajeConPuntos punto= new ViajeConPuntos();
+        
+        //Se inicializa la ventana ViajeConPuntos
         punto.setVisible(true);
     }//GEN-LAST:event_btnPuntosActionPerformed
 

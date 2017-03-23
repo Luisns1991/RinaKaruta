@@ -1,42 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+//Grupo
 package ventanas;
 
-/**
- *
+/*
  * @author f3r
  */
 public class Vendedor extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Vendedor
-     */
+    // se crea una variable de tipo entero cli
+    int cli;
     
-    int c;
-    
+    //se crean contenedores para almacenar los datos ingresados en la ventana de registro
     String []nom=new String[50];
     String []ape= new String[50];
     String []dni = new String[50];
     String []tlf = new String[50];
     String []mail = new String[50];
-    int []cli2=new int[1];
-    
-    
     
     public Vendedor() {
         initComponents();
+        
+        //con este código la ventana aparece en el centro de la pantalla al ser inicializada
         this.setLocationRelativeTo(this);
         
-        
-        
-        
-        
-        //cboCliente.addItem("01");
-        /*cboCliente.addItem("02");
-        cboCliente.addItem("03");*/
+        //se escribe como primer item en el combobox la palabra seleccionar
+        cboCliente.addItem("Seleccionar");
     }
 
     /**
@@ -102,19 +89,20 @@ public class Vendedor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     private void cboClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboClienteActionPerformed
-        // TODO add your handling code here:
+        //Se le asigna a la varible cli la posición que se seleccione en el combobox
+        cli=cboCliente.getSelectedIndex();
         
-        c=cboCliente.getSelectedIndex();
-        //
-        if(c==1){
-            lblNomApe.setText(nom[c-1]);
-            lblDNI.setText(dni[c-1]);
-        }else if(c==2){
-            lblNomApe.setText(nom[c-1]);
-            lblDNI.setText(dni[c-1]);
-        }else if(c==3){
-            lblNomApe.setText(nom[c-1]);
-            lblDNI.setText(dni[c-1]);
+        /*Se crea un bucle que verifique en que posición se encuentra el combo box, 
+          y dependiendo de eso muestre los datos que ya han sido ingresados por cada cliente*/
+        for (int i = 1; i < nom.length; i++) {
+            if(cli==0){
+                lblNomApe.setText("");
+                lblDNI.setText("");
+            
+            }else if(cli==i) {
+                lblNomApe.setText(nom[i-1]);
+            lblDNI.setText(dni[i-1]);
+                }
         }
     }//GEN-LAST:event_cboClienteActionPerformed
 

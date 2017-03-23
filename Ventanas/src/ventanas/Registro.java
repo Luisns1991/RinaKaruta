@@ -1,11 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+//grupo
 package ventanas;
 
 import java.awt.event.ActionEvent;
+import javax.swing.JOptionPane;
 import static ventanas.Vendedor.cboCliente;
 
 /**
@@ -14,17 +11,20 @@ import static ventanas.Vendedor.cboCliente;
  */
 public class Registro extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Registro
-     */
-    
+    // se crea variable de tipo entero para contar los clientes registrados
     int c;
+    
+    //Se crea la variable doc para indicar la posición del commobox de documento de identidad
+    int doc;
+    
+    //se crean vectores para que almacenen los datos de cada cliente
     String []nom= new String[50];
     String []ape= new String[50];
     String []dni = new String[50];
     String []tlf = new String[50];
     String []mail = new String[50];
     
+    // se crean objetos datos,term,encues para manipular las ventanas Vendedor,Terminos,Encuesta
     Vendedor datos = new Vendedor();
     Terminos term=new Terminos();
     Encuesta encues=new Encuesta();
@@ -32,8 +32,9 @@ public class Registro extends javax.swing.JFrame {
     
     public Registro() {
         initComponents();
-        this.setLocationRelativeTo(this);
         
+        //con este código la ventana aparece en el centro de la pantalla al ser inicializada
+        this.setLocationRelativeTo(this);
         
     }
 
@@ -51,16 +52,15 @@ public class Registro extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txtApellido = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        cboDocumento = new javax.swing.JComboBox<>();
         txtDNI = new javax.swing.JTextField();
-        btnGuardar = new javax.swing.JButton();
         btnEnviar = new javax.swing.JButton();
         chkTermi = new javax.swing.JCheckBox();
         btnVer = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txtTelef = new javax.swing.JTextField();
         txtEmail = new javax.swing.JTextField();
-        lblRegistro = new javax.swing.JLabel();
+        btnNuevo = new javax.swing.JButton();
         lblFondoRegistro = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -79,7 +79,7 @@ public class Registro extends javax.swing.JFrame {
                 txtNombreActionPerformed(evt);
             }
         });
-        getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 134, 27));
+        getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, 134, 27));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -87,26 +87,25 @@ public class Registro extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 82, 70, 27));
 
         txtApellido.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        getContentPane().add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 134, 27));
+        getContentPane().add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 134, 27));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Telef.:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 172, 70, 27));
 
-        txtDNI.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        getContentPane().add(txtDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 134, 27));
-
-        btnGuardar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnGuardar.setText("GUARDAR");
-        btnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnGuardar.setEnabled(false);
-        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+        cboDocumento.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cboDocumento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo de Documento", "DNI", "Pasaporte", "Carnet de Extranjería", "Libreta Electoral" }));
+        cboDocumento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarActionPerformed(evt);
+                cboDocumentoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 102, 32));
+        getContentPane().add(cboDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 150, 30));
+
+        txtDNI.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        txtDNI.setEnabled(false);
+        getContentPane().add(txtDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 134, 27));
 
         btnEnviar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnEnviar.setText("ENVIAR");
@@ -137,11 +136,6 @@ public class Registro extends javax.swing.JFrame {
         });
         getContentPane().add(btnVer, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 300, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("DNI:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 127, 60, 27));
-
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("E-mail:");
@@ -153,7 +147,7 @@ public class Registro extends javax.swing.JFrame {
                 txtTelefActionPerformed(evt);
             }
         });
-        getContentPane().add(txtTelef, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 134, 27));
+        getContentPane().add(txtTelef, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 134, 27));
 
         txtEmail.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
@@ -161,12 +155,17 @@ public class Registro extends javax.swing.JFrame {
                 txtEmailActionPerformed(evt);
             }
         });
-        getContentPane().add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 134, 27));
+        getContentPane().add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 134, 27));
 
-        lblRegistro.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblRegistro.setForeground(new java.awt.Color(255, 255, 255));
-        lblRegistro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(lblRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 318, 21));
+        btnNuevo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnNuevo.setText("NUEVO");
+        btnNuevo.setEnabled(false);
+        btnNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 100, 30));
 
         lblFondoRegistro.setForeground(new java.awt.Color(255, 255, 255));
         lblFondoRegistro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/avion.jpg"))); // NOI18N
@@ -174,81 +173,71 @@ public class Registro extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    //se crea un método llamado obtener que guarda los datos que se ingresan en cada textfield
     private void obtener(){
-        mail[c]=txtEmail.getText();
-        tlf[c]=txtTelef.getText();
         nom[c]=txtNombre.getText();
         ape[c]=txtApellido.getText();
         dni[c]=txtDNI.getText();
-        
+        tlf[c]=txtTelef.getText();
+        mail[c]=txtEmail.getText();
     }
-    
-    private void condi(){
-            for (int i = 0; i < mail[c].length(); i++) {    
-                if( (mail[c].charAt(i)=='@')){
-                chkTermi.setEnabled(true);
-                break;
-                }
-                else{    
-                    chkTermi.setEnabled(false);
-                }
-            }
-    }    
         
-    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-         
-        this.obtener();
-        
-        datos.nom[c]=nom[c]+" "+ape[c];
-        
-        //
-        datos.dni[c]=dni[c];
-        c++;
-        
-        
-        
-        //txtNombre.setEnabled(false);
-        //txtApellido.setEnabled(false);
-        //txtDNI.setEnabled(false);
-        txtTelef.setEnabled(false);
-        //txtEmail.setEnabled(false);
-        lblRegistro.setText("Su registro ha sido exitoso.");
-        //chkTermi.setEnabled(false);
-        btnVer.setEnabled(false);
-        //btnGuardar.setEnabled(false);
-        btnEnviar.setEnabled(true);
-        
-    }//GEN-LAST:event_btnGuardarActionPerformed
-
     private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
         
+        // se llama al método obtener
+        
+        datos.nom[c]=nom[c]+" "+ape[c];
+        //
+        datos.dni[c]=dni[c];
+        //
+        datos.tlf[c]=tlf[c];
+        //
+        datos.mail[c]=mail[c];
+        
+        //cada vez q se de clic al botón enviar se sumará 1 a la variable c
+        c++;
+        
+        txtNombre.setEnabled(false);
+        txtApellido.setEnabled(false);
+        txtDNI.setEnabled(false);
+        txtTelef.setEnabled(false);
+        txtEmail.setEnabled(false);
+        chkTermi.setEnabled(false);
+        btnVer.setEnabled(false);
+        
+        //Se muestra una ventana predeterminada de netbeans mostrando el mensaje: Su registro ha sido exitoso
+        JOptionPane.showMessageDialog(null, "\t"+nom[c-1]+", su registro ha sido exitoso.","REGISTRO",JOptionPane.PLAIN_MESSAGE);
+        btnEnviar.setEnabled(true);
+        
+        //Se abre la ventana del vendedor
         datos.setVisible(true);
+        
+        //Se abre la ventana de encuesta
         encues.setVisible(true);
         
-        cboCliente.addItem("Seleccionar");
-        
-        for ( int i = 0; i < c ; i++) {
-            cboCliente.addItem("0"+(i+1));   
+        //Se hace un bucle para que agregue en el combobox del vendedor la cantidad de clientes que se van registrando
+        for ( int i = 0; i < c ; i++) { 
+            cboCliente.addItem("0"+(i+1));  
         }
+        
+        //Se habilita el botón nuevo
+        btnNuevo.setEnabled(true);
         
     }//GEN-LAST:event_btnEnviarActionPerformed
     
     
     private void btnVerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerActionPerformed
-        // TODO add your handling code here:
-        
+         // Se muestra la ventana de los términos
         term.setVisible(true);
-        
-        
     }//GEN-LAST:event_btnVerActionPerformed
 
     private void chkTermiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkTermiActionPerformed
-        // TODO add your handling code here:
+        //Se hace una condición que permita habilitar el botón enviar solo si el cliente acepta los términos y condiciones
         if (chkTermi.isSelected()) {
-            btnGuardar.setEnabled(true);
+            btnEnviar.setEnabled(true);
             
         }else{
-            btnGuardar.setEnabled(false);
+            btnEnviar.setEnabled(false);
             
         }
     }//GEN-LAST:event_chkTermiActionPerformed
@@ -264,10 +253,65 @@ public class Registro extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTelefActionPerformed
 
     private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
-        // TODO add your handling code here:
+        // se llama al método obtener
         this.obtener();
-        this.condi();
+        
+       //se crea un bucle en donde se verifique si existe algún @ en el campo de e-mail
+        for (int i = 0; i < mail[c].length(); i++) {    
+                if( (mail[c].charAt(i)=='@')){
+                //si existe arroba se habilitará el checkbox para aceptar los términos y ocndiciones
+                chkTermi.setEnabled(true);
+                break;
+                }
+                else{
+                //sino existe arroba no se habilita ese checkbox
+                    chkTermi.setEnabled(false);
+                }
+            }
     }//GEN-LAST:event_txtEmailActionPerformed
+
+    private void cboDocumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboDocumentoActionPerformed
+        //Se determina la posición seleccionada en el combobox de documento y el valor lo toma la variable doc
+        doc=cboDocumento.getSelectedIndex();
+        if (doc!=0) {
+            txtDNI.setEnabled(true);
+        } else{
+            txtDNI.setEnabled(false);
+        }
+    }//GEN-LAST:event_cboDocumentoActionPerformed
+
+    private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
+        // Se borran todos los items escritos en el combobox
+        cboCliente.removeAllItems();
+
+        //Se escribe como primer item la palabra Seleccionar
+        cboCliente.addItem("Seleccionar");
+
+        //se habilita el botón Ver de términos y condiciones
+        btnVer.setEnabled(true);
+
+        //se deshabilitan el boton enviar yel checkbox para aceptar terminos y condiciones
+        btnEnviar.setEnabled(false);
+        chkTermi.setSelected(false);
+
+        // se borra lo que estaba escrito del registro anterior
+        txtNombre.setText("");
+        txtApellido.setText("");
+        txtDNI.setText("");
+        txtTelef.setText("");
+        txtEmail.setText("");
+
+        //se habilitan los campos de texto para ingresar un nuevo registro
+        txtNombre.setEnabled(true);
+        txtApellido.setEnabled(true);
+        txtDNI.setEnabled(true);
+        txtTelef.setEnabled(true);
+        txtEmail.setEnabled(true);
+
+        //se inhabilita el botón nuevo
+        btnNuevo.setEnabled(false);
+
+    }//GEN-LAST:event_btnNuevoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -307,16 +351,15 @@ public class Registro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JButton btnEnviar;
-    public static javax.swing.JButton btnGuardar;
+    public static javax.swing.JButton btnNuevo;
     public static javax.swing.JButton btnVer;
+    public static javax.swing.JComboBox<String> cboDocumento;
     public static javax.swing.JCheckBox chkTermi;
     public static javax.swing.JLabel jLabel1;
     public static javax.swing.JLabel jLabel2;
     public static javax.swing.JLabel jLabel3;
-    public static javax.swing.JLabel jLabel4;
     public static javax.swing.JLabel jLabel5;
     public static javax.swing.JLabel lblFondoRegistro;
-    public static javax.swing.JLabel lblRegistro;
     public static javax.swing.JTextField txtApellido;
     public static javax.swing.JTextField txtDNI;
     public static javax.swing.JTextField txtEmail;

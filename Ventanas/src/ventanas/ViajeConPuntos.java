@@ -1,12 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+//grupo
 package ventanas;
-
-/**
- *
+/*
  * @author f3r
  */
 public class ViajeConPuntos extends javax.swing.JFrame {
@@ -16,6 +10,7 @@ public class ViajeConPuntos extends javax.swing.JFrame {
      */
     public ViajeConPuntos() {
         initComponents();
+        //Con este código la ventana aparece en el centro de la pantalla al ser inicializada
         this.setLocationRelativeTo(this);
     }
 
@@ -28,31 +23,23 @@ public class ViajeConPuntos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        lblPuntos = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("PUNTOS");
         setResizable(false);
 
-        jTextArea1.setEditable(false);
-        jTextArea1.setBackground(new java.awt.Color(204, 204, 255));
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
-        jTextArea1.setForeground(new java.awt.Color(0, 51, 51));
-        jTextArea1.setRows(5);
-        jTextArea1.setText("\nIca\t\t350PTS\n\nArequipa\t500PTS\n\nNazca\t\t700PTS\n\nChachapoyas\t900PTS\n\nIquitos\t\t1200PTS\n\nCuzco\t\t1500PTS");
-        jScrollPane1.setViewportView(jTextArea1);
+        lblPuntos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/puntos1.jpg"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
+            .addComponent(lblPuntos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
+            .addComponent(lblPuntos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -94,7 +81,6 @@ public class ViajeConPuntos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel lblPuntos;
     // End of variables declaration//GEN-END:variables
 }
