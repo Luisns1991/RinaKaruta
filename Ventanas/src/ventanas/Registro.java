@@ -95,7 +95,7 @@ public class Registro extends javax.swing.JFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 172, 70, 27));
 
         cboDocumento.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        cboDocumento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo de Documento", "DNI", "Pasaporte", "Carnet de Extranjería", "Libreta Electoral" }));
+        cboDocumento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo de Documento", "DNI", "Pasaporte", "Carnet de Extranjería" }));
         cboDocumento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cboDocumentoActionPerformed(evt);
@@ -214,6 +214,12 @@ public class Registro extends javax.swing.JFrame {
         
         //Se abre la ventana de encuesta
         encues.setVisible(true);
+        //Se deseleccionan todos los rbutton del grupo clima de la ventana encuesta
+        encues.clima.clearSelection();
+        //Se deseleccionan todos los rbutton del grupo atraccion de la ventana encuesta
+        encues.atraccion.clearSelection();
+        //Se deseleccionan todos los rbutton del grupo disfrute de la ventana encuesta
+        encues.disfrute.clearSelection();
         
         //Se hace un bucle para que agregue en el combobox del vendedor la cantidad de clientes que se van registrando
         for ( int i = 0; i < c ; i++) { 
@@ -297,6 +303,7 @@ public class Registro extends javax.swing.JFrame {
         // se borra lo que estaba escrito del registro anterior
         txtNombre.setText("");
         txtApellido.setText("");
+        cboDocumento.setSelectedIndex(0); //vuelve al primer item del combo box
         txtDNI.setText("");
         txtTelef.setText("");
         txtEmail.setText("");
@@ -304,7 +311,7 @@ public class Registro extends javax.swing.JFrame {
         //se habilitan los campos de texto para ingresar un nuevo registro
         txtNombre.setEnabled(true);
         txtApellido.setEnabled(true);
-        txtDNI.setEnabled(true);
+        txtDNI.setEnabled(false);
         txtTelef.setEnabled(true);
         txtEmail.setEnabled(true);
 

@@ -39,24 +39,15 @@ public class Terminos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         taTerminos = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
-        lblFondoTérminos = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("TÉRMINOS Y CONDICIONES");
         setBackground(new java.awt.Color(51, 51, 51));
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        taTerminos.setEditable(false);
-        taTerminos.setColumns(20);
-        taTerminos.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
-        taTerminos.setRows(5);
-        jScrollPane1.setViewportView(taTerminos);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 450, 318));
 
         jButton1.setBackground(new java.awt.Color(204, 0, 0));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -67,10 +58,15 @@ public class Terminos extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(379, 347, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 250, -1, -1));
 
-        lblFondoTérminos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/nubes.jpg"))); // NOI18N
-        getContentPane().add(lblFondoTérminos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 3, 470, 380));
+        taTerminos.setEditable(false);
+        taTerminos.setColumns(20);
+        taTerminos.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        taTerminos.setRows(5);
+        jScrollPane1.setViewportView(taTerminos);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -118,7 +114,6 @@ public class Terminos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lblFondoTérminos;
     private javax.swing.JTextArea taTerminos;
     // End of variables declaration//GEN-END:variables
 }

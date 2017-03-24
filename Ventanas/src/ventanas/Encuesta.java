@@ -22,18 +22,25 @@ public class Encuesta extends javax.swing.JFrame {
      */
     public Encuesta() {
         initComponents();
-        
+        //con este código la ventana aparece en el centro de la pantalla al ser inicializada
         this.setLocationRelativeTo(this);
         
+        //Se agregan los rbutton al grupo clima
         clima.add(rbtFiro);
         clima.add(rbtCalido);
         clima.add(rbtTemplado);
+        //Se deseleccionan todos los rbutton del grupo clima
+        
+        //Se agregan los rbutton al grupo atraccion
         atraccion.add(rbtAventura);
         atraccion.add(rbtFantasia);
         atraccion.add(rbtHistoria);
+        
+        //Se agregan los rbutton al grupo disfrute
         disfrute.add(rbtComida);
         disfrute.add(rbtPaisaje);
         disfrute.add(rbtAmbos);
+        
     }
 
     /**
