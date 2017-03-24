@@ -64,7 +64,6 @@ public class Encuesta extends javax.swing.JFrame {
         rbtComida = new javax.swing.JRadioButton();
         rbtPaisaje = new javax.swing.JRadioButton();
         rbtAmbos = new javax.swing.JRadioButton();
-        jLabel4 = new javax.swing.JLabel();
         btnIr = new javax.swing.JButton();
         btnNoGracias = new javax.swing.JButton();
 
@@ -107,9 +106,6 @@ public class Encuesta extends javax.swing.JFrame {
 
         rbtAmbos.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         rbtAmbos.setText("Ambos");
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        jLabel4.setText("Recorre tu viaje imaginario y gana un cupón");
 
         btnIr.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnIr.setText("IR");
@@ -163,18 +159,14 @@ public class Encuesta extends javax.swing.JFrame {
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(btnIr, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnNoGracias)
-                                .addGap(20, 20, 20)))))
-                .addContainerGap(29, Short.MAX_VALUE))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(btnIr, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addComponent(btnNoGracias)
+                .addGap(50, 50, 50))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,13 +192,11 @@ public class Encuesta extends javax.swing.JFrame {
                     .addComponent(rbtComida)
                     .addComponent(rbtPaisaje)
                     .addComponent(rbtAmbos))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnNoGracias)
-                    .addComponent(btnIr))
-                .addGap(29, 29, 29))
+                    .addComponent(btnIr)
+                    .addComponent(btnNoGracias))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         pack();
@@ -263,7 +253,6 @@ public class Encuesta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JRadioButton rbtAmbos;
     private javax.swing.JRadioButton rbtAventura;
     private javax.swing.JRadioButton rbtCalido;
