@@ -1,6 +1,9 @@
 //Grupo
 package ventanas;
 
+import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
+
 /*
  * @author f3r
  */
@@ -16,9 +19,23 @@ public class Vendedor extends javax.swing.JFrame {
     String []tlf = new String[50];
     String []mail = new String[50];
     
+    
+    ButtonGroup Descuentos=new ButtonGroup();
     public Vendedor() {
         initComponents();
+        Descuentos.add(rbt5);
+        Descuentos.add(rbt7);
+        Descuentos.add(rbt6);
         
+        cboViajes.addItem("Seleccionar Viaje...");
+        cboViajes.addItem("Lima-Ica");
+        cboViajes.addItem("Lima-Nazca");
+        cboViajes.addItem("Lima-Arequipa");
+        cboViajes.addItem("Lima-Chachapoyas");
+        cboViajes.addItem("Lima-Iquitos");
+        cboViajes.addItem("Lima-Cuzco");
+        
+        setIconImage(new ImageIcon(getClass().getResource("../Imagen/icono.png")).getImage());
         //con este código la ventana aparece en el centro de la pantalla al ser inicializada
         this.setLocationRelativeTo(this);
         
@@ -35,23 +52,22 @@ public class Vendedor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
-        jLabel8 = new javax.swing.JLabel();
+        chkSi = new javax.swing.JCheckBox();
+        chkNo = new javax.swing.JCheckBox();
+        lblMonto_Total = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        lblTelefono = new javax.swing.JLabel();
+        lblEmail = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         rbt7 = new javax.swing.JRadioButton();
-        rtb6 = new javax.swing.JRadioButton();
+        rbt6 = new javax.swing.JRadioButton();
         rbt5 = new javax.swing.JRadioButton();
         chkIgv = new javax.swing.JCheckBox();
         lblP_real = new javax.swing.JLabel();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jComboBox1 = new javax.swing.JComboBox();
+        chk10_Puntos = new javax.swing.JCheckBox();
+        chk5_Puntos = new javax.swing.JCheckBox();
+        chk15_Puntos = new javax.swing.JCheckBox();
+        cboViajes = new javax.swing.JComboBox();
         cboCliente = new javax.swing.JComboBox<String>();
         jLabel2 = new javax.swing.JLabel();
         lblNomApe = new javax.swing.JLabel();
@@ -61,216 +77,162 @@ public class Vendedor extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        taDatos = new javax.swing.JTextArea();
+        btnMT = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("VENDEDOR");
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jCheckBox5.setText("Si");
+        chkSi.setText("Si");
+        chkSi.setOpaque(false);
+        getContentPane().add(chkSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(128, 259, -1, -1));
 
-        jCheckBox6.setText("No");
+        chkNo.setText("No");
+        chkNo.setOpaque(false);
+        getContentPane().add(chkNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 259, -1, -1));
 
-        jLabel8.setText(" ");
-        jLabel8.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        lblMonto_Total.setText(" ");
+        lblMonto_Total.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        getContentPane().add(lblMonto_Total, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 464, 78, 23));
 
         jLabel9.setText("Precio Real");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 304, -1, -1));
 
-        jLabel10.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        lblTelefono.setForeground(new java.awt.Color(153, 255, 255));
+        lblTelefono.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(lblTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 145, 214, 26));
 
-        jLabel11.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        jToggleButton1.setText("MT");
+        lblEmail.setForeground(new java.awt.Color(153, 255, 255));
+        lblEmail.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 177, 214, 26));
 
         jLabel6.setText("Dsct");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 341, -1, -1));
 
         rbt7.setText("7%");
+        rbt7.setOpaque(false);
+        getContentPane().add(rbt7, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 411, -1, -1));
 
-        rtb6.setText("6%");
-        rtb6.addActionListener(new java.awt.event.ActionListener() {
+        rbt6.setText("6%");
+        rbt6.setOpaque(false);
+        rbt6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rtb6ActionPerformed(evt);
+                rbt6ActionPerformed(evt);
             }
         });
+        getContentPane().add(rbt6, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 388, -1, -1));
 
         rbt5.setText("5%");
+        rbt5.setOpaque(false);
         rbt5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbt5ActionPerformed(evt);
             }
         });
+        getContentPane().add(rbt5, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 362, -1, -1));
 
         chkIgv.setText("18 %");
+        chkIgv.setOpaque(false);
+        getContentPane().add(chkIgv, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, -1, -1));
 
         lblP_real.setText(" ");
         lblP_real.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        getContentPane().add(lblP_real, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, 78, 23));
 
-        jCheckBox2.setText("10%");
+        chk10_Puntos.setText("10%");
+        chk10_Puntos.setOpaque(false);
+        getContentPane().add(chk10_Puntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 388, -1, -1));
 
-        jCheckBox3.setText("5%");
-        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
+        chk5_Puntos.setText("5%");
+        chk5_Puntos.setOpaque(false);
+        chk5_Puntos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox3ActionPerformed(evt);
+                chk5_PuntosActionPerformed(evt);
             }
         });
+        getContentPane().add(chk5_Puntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 362, -1, -1));
 
-        jCheckBox4.setText("15%");
+        chk15_Puntos.setText("15%");
+        chk15_Puntos.setOpaque(false);
+        getContentPane().add(chk15_Puntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 411, -1, -1));
+
+        cboViajes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboViajesActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cboViajes, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 221, 214, -1));
 
         cboCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cboClienteActionPerformed(evt);
             }
         });
+        getContentPane().add(cboCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(83, 31, 116, 26));
 
         jLabel2.setText("Cliente");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 31, 45, 26));
 
+        lblNomApe.setForeground(new java.awt.Color(153, 255, 255));
         lblNomApe.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(lblNomApe, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 68, 214, 30));
 
+        lblDNI.setForeground(new java.awt.Color(153, 255, 255));
         lblDNI.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(lblDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 104, 214, 30));
 
         jLabel1.setText("Hospedaje");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 263, -1, -1));
 
         jLabel3.setText("IGV");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, -1, 20));
 
         jLabel4.setText("Monto Total");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 468, -1, -1));
 
         jLabel5.setText("Dsct por puntos");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 341, -1, -1));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        taDatos.setColumns(20);
+        taDatos.setRows(5);
+        jScrollPane1.setViewportView(taDatos);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(rbt5)
-                                    .addComponent(rtb6)
-                                    .addComponent(rbt7))
-                                .addGap(65, 65, 65)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jCheckBox2)
-                                    .addComponent(jCheckBox4)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jCheckBox3)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel9)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(lblP_real, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(14, 14, 14)
-                                        .addComponent(jLabel3))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel1)
-                                        .addGap(55, 55, 55)
-                                        .addComponent(jCheckBox5)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox6)
-                                    .addComponent(chkIgv))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jComboBox1, 0, 214, Short.MAX_VALUE)
-                            .addComponent(lblNomApe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblDNI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(cboCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
-                        .addGap(24, 24, 24))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cboCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblNomApe, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jCheckBox5)
-                    .addComponent(jCheckBox6))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblP_real, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel3)
-                            .addComponent(chkIgv))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rbt5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rtb6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rbt7))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox4)))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
-                    .addComponent(jToggleButton1))
-                .addContainerGap(67, Short.MAX_VALUE))
-        );
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(244, 31, 239, 210));
+
+        btnMT.setText("MT");
+        btnMT.setBorderPainted(false);
+        btnMT.setContentAreaFilled(false);
+        btnMT.setOpaque(false);
+        getContentPane().add(btnMT, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 464, -1, -1));
+
+        jButton1.setText("Generar Ficha");
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 380, -1, -1));
+
+        jButton2.setText("Nuevo");
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 410, 100, -1));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagen/fondo.jpg"))); // NOI18N
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 530, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void rtb6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rtb6ActionPerformed
+    private void rbt6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbt6ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_rtb6ActionPerformed
+    }//GEN-LAST:event_rbt6ActionPerformed
 
     private void rbt5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbt5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rbt5ActionPerformed
 
-    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
+    private void chk5_PuntosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chk5_PuntosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox3ActionPerformed
+    }//GEN-LAST:event_chk5_PuntosActionPerformed
 
     private void cboClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboClienteActionPerformed
         // se le asigna a la varible cli la posición que se seleccione en el combobox
@@ -282,14 +244,31 @@ public class Vendedor extends javax.swing.JFrame {
             if(cli==0){
                 lblNomApe.setText("");
                 lblDNI.setText("");
-
+                lblTelefono.setText("");
+                lblEmail.setText("");
             }else if(cli==i) {
                 lblNomApe.setText(nom[i-1]);
                 lblDNI.setText(dni[i-1]);
+                lblTelefono.setText(tlf[i-1]);
+                lblEmail.setText(mail[i-1]);
             }
         }
 
     }//GEN-LAST:event_cboClienteActionPerformed
+
+    private void cboViajesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboViajesActionPerformed
+        int pos=cboViajes.getSelectedIndex();
+        
+        switch(pos){
+            case 1 : lblP_real.setText(""+350); break;
+            case 2 : lblP_real.setText(""+500); break;
+            case 3 : lblP_real.setText(""+700); break;
+            case 4 : lblP_real.setText(""+900); break;
+            case 5 : lblP_real.setText(""+1200); break;
+            case 6 : lblP_real.setText(""+1500); break;
+            default: lblP_real.setText("");
+        }
+    }//GEN-LAST:event_cboViajesActionPerformed
     
     /**
      * @param args the command line arguments
@@ -328,32 +307,35 @@ public class Vendedor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnMT;
     public static javax.swing.JComboBox<String> cboCliente;
+    private javax.swing.JComboBox cboViajes;
+    private javax.swing.JCheckBox chk10_Puntos;
+    private javax.swing.JCheckBox chk15_Puntos;
+    private javax.swing.JCheckBox chk5_Puntos;
     private javax.swing.JCheckBox chkIgv;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JCheckBox chkNo;
+    private javax.swing.JCheckBox chkSi;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JToggleButton jToggleButton1;
     public static javax.swing.JLabel lblDNI;
+    private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblMonto_Total;
     public static javax.swing.JLabel lblNomApe;
     private javax.swing.JLabel lblP_real;
+    private javax.swing.JLabel lblTelefono;
     private javax.swing.JRadioButton rbt5;
+    private javax.swing.JRadioButton rbt6;
     private javax.swing.JRadioButton rbt7;
-    private javax.swing.JRadioButton rtb6;
+    private javax.swing.JTextArea taDatos;
     // End of variables declaration//GEN-END:variables
 }

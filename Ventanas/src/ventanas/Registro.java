@@ -2,7 +2,9 @@
 package ventanas;
 
 import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import static ventanas.Vendedor.cboCliente;
 
 /**
@@ -32,6 +34,11 @@ public class Registro extends javax.swing.JFrame {
     
     public Registro() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("../Imagen/icono.png")).getImage());
+        
+     
+       
+        
         
         //con este código la ventana aparece en el centro de la pantalla al ser inicializada
         this.setLocationRelativeTo(this);
@@ -52,7 +59,7 @@ public class Registro extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txtApellido = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        cboDocumento = new javax.swing.JComboBox<>();
+        cboDocumento = new javax.swing.JComboBox<String>();
         txtDNI = new javax.swing.JTextField();
         btnEnviar = new javax.swing.JButton();
         chkTermi = new javax.swing.JCheckBox();
@@ -95,7 +102,7 @@ public class Registro extends javax.swing.JFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 172, 70, 27));
 
         cboDocumento.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        cboDocumento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo de Documento", "DNI", "Pasaporte", "Carnet de Extranjería" }));
+        cboDocumento.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tipo de Documento", "DNI", "Pasaporte", "Carnet de Extranjería" }));
         cboDocumento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cboDocumentoActionPerformed(evt);
@@ -108,24 +115,41 @@ public class Registro extends javax.swing.JFrame {
         getContentPane().add(txtDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 134, 27));
 
         btnEnviar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnEnviar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagen/enviar.png"))); // NOI18N
         btnEnviar.setText("ENVIAR");
+        btnEnviar.setContentAreaFilled(false);
         btnEnviar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEnviar.setEnabled(false);
+        btnEnviar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnEnviar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnEnviar.setOpaque(false);
+        btnEnviar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnEnviarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnEnviarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnEnviarMouseExited(evt);
+            }
+        });
         btnEnviar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEnviarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 340, 102, 32));
+        getContentPane().add(btnEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 330, 130, 60));
 
         chkTermi.setText("Acepto Términos y Condiciones");
         chkTermi.setEnabled(false);
+        chkTermi.setOpaque(false);
         chkTermi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chkTermiActionPerformed(evt);
             }
         });
-        getContentPane().add(chkTermi, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
+        getContentPane().add(chkTermi, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
 
         btnVer.setText("Ver");
         btnVer.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -134,7 +158,7 @@ public class Registro extends javax.swing.JFrame {
                 btnVerActionPerformed(evt);
             }
         });
-        getContentPane().add(btnVer, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 300, -1, -1));
+        getContentPane().add(btnVer, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -158,17 +182,33 @@ public class Registro extends javax.swing.JFrame {
         getContentPane().add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 134, 27));
 
         btnNuevo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagen/nuevo.png"))); // NOI18N
         btnNuevo.setText("NUEVO");
+        btnNuevo.setContentAreaFilled(false);
         btnNuevo.setEnabled(false);
+        btnNuevo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnNuevo.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnNuevo.setOpaque(false);
+        btnNuevo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnNuevoMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnNuevoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnNuevoMouseExited(evt);
+            }
+        });
         btnNuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNuevoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 100, 30));
+        getContentPane().add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 130, 60));
 
         lblFondoRegistro.setForeground(new java.awt.Color(255, 255, 255));
-        lblFondoRegistro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/avion.jpg"))); // NOI18N
+        lblFondoRegistro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagen/avion.jpg"))); // NOI18N
         getContentPane().add(lblFondoRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -6, 430, 410));
 
         pack();
@@ -319,6 +359,31 @@ public class Registro extends javax.swing.JFrame {
         btnNuevo.setEnabled(false);
 
     }//GEN-LAST:event_btnNuevoActionPerformed
+
+    private void btnEnviarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEnviarMouseEntered
+       btnEnviar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagen/enviarzoom.png")));
+    }//GEN-LAST:event_btnEnviarMouseEntered
+
+    private void btnEnviarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEnviarMouseClicked
+       
+    }//GEN-LAST:event_btnEnviarMouseClicked
+
+    private void btnEnviarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEnviarMouseExited
+         btnEnviar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagen/enviar.png")));
+    }//GEN-LAST:event_btnEnviarMouseExited
+
+    private void btnNuevoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNuevoMouseClicked
+     
+    }//GEN-LAST:event_btnNuevoMouseClicked
+
+    private void btnNuevoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNuevoMouseEntered
+         //btnNuevo.setText(null); 
+         btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagen/nuevozoom.png")));
+    }//GEN-LAST:event_btnNuevoMouseEntered
+
+    private void btnNuevoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNuevoMouseExited
+       btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagen/nuevo.png")));
+    }//GEN-LAST:event_btnNuevoMouseExited
 
     /**
      * @param args the command line arguments

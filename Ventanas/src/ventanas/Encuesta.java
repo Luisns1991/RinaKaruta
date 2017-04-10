@@ -6,6 +6,7 @@
 package ventanas;
 
 import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
 import static ventanas.Vendedor.cboCliente;
 
 /**
@@ -22,6 +23,7 @@ public class Encuesta extends javax.swing.JFrame {
      */
     public Encuesta() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("../Imagen/icono.png")).getImage());
         //con este código la ventana aparece en el centro de la pantalla al ser inicializada
         this.setLocationRelativeTo(this);
         
@@ -66,138 +68,94 @@ public class Encuesta extends javax.swing.JFrame {
         rbtAmbos = new javax.swing.JRadioButton();
         btnIr = new javax.swing.JButton();
         btnNoGracias = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("ENCUESTA");
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel1.setText("¿Qué clima te gusta?");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 149, 38));
 
         rbtFiro.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         rbtFiro.setText("Frío");
+        rbtFiro.setOpaque(false);
+        getContentPane().add(rbtFiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 85, -1, -1));
 
         rbtTemplado.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         rbtTemplado.setText("Templado");
+        rbtTemplado.setOpaque(false);
+        getContentPane().add(rbtTemplado, new org.netbeans.lib.awtextra.AbsoluteConstraints(82, 85, -1, -1));
 
         rbtCalido.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         rbtCalido.setText("Cálido");
+        rbtCalido.setOpaque(false);
+        getContentPane().add(rbtCalido, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 85, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel2.setText("¿Qué te atrae más?");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 128, 149, 38));
 
         rbtAventura.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         rbtAventura.setText("Aventura");
+        rbtAventura.setOpaque(false);
+        getContentPane().add(rbtAventura, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 168, -1, -1));
 
         rbtHistoria.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         rbtHistoria.setText("Historia");
+        rbtHistoria.setOpaque(false);
+        getContentPane().add(rbtHistoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 168, -1, -1));
 
         rbtFantasia.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         rbtFantasia.setText("Fantasía");
+        rbtFantasia.setOpaque(false);
+        getContentPane().add(rbtFantasia, new org.netbeans.lib.awtextra.AbsoluteConstraints(202, 168, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel3.setText("¿Qué disfrutas más en un viaje?");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 211, 219, 38));
 
         rbtComida.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         rbtComida.setText("Comida");
+        rbtComida.setOpaque(false);
+        getContentPane().add(rbtComida, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 251, -1, -1));
 
         rbtPaisaje.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         rbtPaisaje.setText("Paisaje");
+        rbtPaisaje.setOpaque(false);
+        getContentPane().add(rbtPaisaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 251, -1, -1));
 
         rbtAmbos.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         rbtAmbos.setText("Ambos");
+        rbtAmbos.setOpaque(false);
+        getContentPane().add(rbtAmbos, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 251, -1, -1));
 
         btnIr.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnIr.setText("IR");
+        btnIr.setBorderPainted(false);
+        btnIr.setOpaque(false);
         btnIr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIrActionPerformed(evt);
             }
         });
+        getContentPane().add(btnIr, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 330, 71, -1));
 
         btnNoGracias.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnNoGracias.setText("NO,  GRACIAS");
+        btnNoGracias.setBorderPainted(false);
+        btnNoGracias.setOpaque(false);
         btnNoGracias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNoGraciasActionPerformed(evt);
             }
         });
+        getContentPane().add(btnNoGracias, new org.netbeans.lib.awtextra.AbsoluteConstraints(166, 330, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(rbtFiro)
-                        .addGap(18, 18, 18)
-                        .addComponent(rbtTemplado)
-                        .addGap(18, 18, 18)
-                        .addComponent(rbtCalido))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(rbtAventura)
-                                .addGap(18, 18, 18)
-                                .addComponent(rbtHistoria)
-                                .addGap(18, 18, 18)
-                                .addComponent(rbtFantasia))
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(rbtComida)
-                        .addGap(18, 18, 18)
-                        .addComponent(rbtPaisaje)
-                        .addGap(18, 18, 18)
-                        .addComponent(rbtAmbos))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(btnIr, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
-                .addComponent(btnNoGracias)
-                .addGap(50, 50, 50))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rbtFiro)
-                    .addComponent(rbtTemplado)
-                    .addComponent(rbtCalido))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rbtAventura)
-                    .addComponent(rbtHistoria)
-                    .addComponent(rbtFantasia))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rbtComida)
-                    .addComponent(rbtPaisaje)
-                    .addComponent(rbtAmbos))
-                .addGap(54, 54, 54)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnIr)
-                    .addComponent(btnNoGracias))
-                .addContainerGap(53, Short.MAX_VALUE))
-        );
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagen/fondo2.jpg"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-230, 0, 580, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -253,6 +211,7 @@ public class Encuesta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JRadioButton rbtAmbos;
     private javax.swing.JRadioButton rbtAventura;
     private javax.swing.JRadioButton rbtCalido;

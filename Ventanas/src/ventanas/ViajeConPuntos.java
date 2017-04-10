@@ -1,5 +1,8 @@
 //grupo
 package ventanas;
+
+import javax.swing.ImageIcon;
+
 /*
  * @author f3r
  */
@@ -10,6 +13,7 @@ public class ViajeConPuntos extends javax.swing.JFrame {
      */
     public ViajeConPuntos() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("../Imagen/icono.png")).getImage());
         //Con este código la ventana aparece en el centro de la pantalla al ser inicializada
         this.setLocationRelativeTo(this);
     }
@@ -29,7 +33,7 @@ public class ViajeConPuntos extends javax.swing.JFrame {
         setTitle("PUNTOS");
         setResizable(false);
 
-        lblPuntos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/puntos1.jpg"))); // NOI18N
+        lblPuntos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagen/puntos1.jpg"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
