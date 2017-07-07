@@ -207,13 +207,22 @@ public class Vendedor extends javax.swing.JFrame {
         btnMT.setText("MT");
         btnMT.setBorderPainted(false);
         btnMT.setContentAreaFilled(false);
-        btnMT.setOpaque(false);
+        btnMT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMTActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnMT, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 464, -1, -1));
 
         jButton1.setText("Generar Ficha");
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 380, -1, -1));
 
         jButton2.setText("Nuevo");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 410, 100, -1));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagen/fondo.jpg"))); // NOI18N
@@ -269,6 +278,14 @@ public class Vendedor extends javax.swing.JFrame {
             default: lblP_real.setText("");
         }
     }//GEN-LAST:event_cboViajesActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void btnMTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMTActionPerformed
     
     /**
      * @param args the command line arguments
